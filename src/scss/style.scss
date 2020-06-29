@@ -12,6 +12,7 @@
 
 .header {
     background-color: $bg;
+    position: relative;
 
     &__inner {
         display: flex;
@@ -35,6 +36,7 @@
     &__list {
         display: flex;
         flex-direction: row;
+        transition: all 0.5s;
 
         li,
         a {
@@ -59,6 +61,37 @@
                 color: $bg;
             }
         }
+    }
+
+    &__list.on {
+        display: block;
+        text-align: center;
+        transition: linear 0.5s;
+    }
+
+    &__menu-btn-wrapper {
+        display: none;
+    }
+
+    &__menu-btn-1 {
+        width: 30px;
+        height: 4px;
+        background-color: sandybrown;
+        margin-bottom: 5px;
+    }
+
+    &__menu-btn-2 {
+        width: 30px;
+        height: 4px;
+        margin-bottom: 5px;
+        background-color: $tomato;
+    }
+
+    &__menu-btn-3 {
+        width: 30px;
+        height: 4px;
+        margin-bottom: 5px;
+        background-color: sandybrown;
     }
 }
 
@@ -140,8 +173,7 @@
 .news {
     background-color: $bg;
     text-align: center;
-    min-height: 790px;
-    height: 100%;
+    padding-bottom: 125px;
 
     &__title {
         padding: 70px 0 75px;
@@ -190,6 +222,12 @@
         font-size: 15px;
         border-radius: 50px;
         margin-bottom: 100px;
+        transition: linear 0.5s;
+
+        &:hover {
+            background-color: $tomato;
+            color: #ffffff;
+        }
     }
 }
 
@@ -257,7 +295,7 @@
 
         button {
             position: absolute;
-            padding: 17px 75px;
+            padding: 16px 75px;
             border: 1px solid #c5c7c7;
             right: 0;
             border-radius: 50px;
@@ -265,6 +303,12 @@
             @include reg;
             font-size: 18px;
             color: #612316;
+            transition: linear 0.5s;
+
+            &:hover {
+                background-color: $tomato;
+                color: #ffffff;
+            }
         }
     }
 }
@@ -332,10 +376,20 @@
 
     &__item-right-link {
         background-color: $tomato;
+        transition: linear 0.5s;
+
+        &:hover {
+            background-color: #4b4e73;
+        }
     }
 
     &__item-left-link {
         background-color: #4b4e73;
+        transition: linear 0.5s;
+
+        &:hover {
+            background-color: $tomato;
+        }
     }
 }
 
@@ -374,6 +428,8 @@
     width: 100%;
     height: 375px;
     filter: brightness(80%);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 // footer end
